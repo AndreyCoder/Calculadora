@@ -1,14 +1,11 @@
 import React, { useRef, useEffect, useState } from 'react';
-
 import './calculator.css';
-
 import { btns, BTN_ACTIONS } from './btnConfig';
 
 const Calculator = () => {
 
     const btnsRef = useRef(null);
     const expRef = useRef(null);
-
     const [expression, setExpression] = useState('');
 
     useEffect(() => {
@@ -17,10 +14,9 @@ const Calculator = () => {
     }, []);
 
     const btnClick = (item) => {
+
         const expDiv = expRef.current;
-
         if (item.action === BTN_ACTIONS.THEME) document.body.classList.toggle('dark');
-
         if (item.action === BTN_ACTIONS.ADD) {
             addAnimSpan(item.display);
 
